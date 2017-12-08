@@ -1,6 +1,3 @@
-# Desafio da semana #3
-
-```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
 var myVar;
 
@@ -16,10 +13,10 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `andando` - Boolean - recebe "falso" por padrão
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
-pessoa{
-    nome: deijai,
-    sobrenome: miranda,
-    sexo: m,
+var pessoa =  {
+    nome: 'deijai',
+    sobrenome: 'miranda',
+    sexo: 'm',
     idade: 22,
     altura: 1.88,
     peso: 66,
@@ -34,7 +31,7 @@ alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
 for chamado.
 */
     pessoa.fazerAniversario = function(){
-        idade++;
+        pessoa.idade++;
     }
 
 /*
@@ -48,8 +45,8 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 pessoa.andar = function(metroscaminhados){
-    this.pessoa.caminhouQuantosMetros = metroscaminhados;
-    this.pessoa.andando = true;
+    pessoa.caminhouQuantosMetros = metroscaminhados;
+    pessoa.andando = true;
 
 }
 
@@ -58,7 +55,7 @@ Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o val
 da propriedade `andando` para o valor booleano que representa "falso".
 */
 pessoa.parar = function(){
-    this.pessoa.andando = false;
+    pessoa.andando = false;
 }
 
 /*
@@ -183,13 +180,12 @@ correta, de acordo com os dados inseridos no objeto.
 
 pessoa.apresentacao = function(sexo, idade, metros){
 
-    if(sexo = "f" && idade != 1 && metros != 1){
-       return "Olá, eu sou o "+this.pessoa.nome+", tenho "+this.pessoa.idade+" anos, "+this.pessoa.altura+", meu peso é "+this.pessoa.peso+" e, só hoje, eu já caminhei "+this.pessoa.caminhouQuantosMetros+" metros!"
+    if(sexo != "m" && idade != 1 && metros != 1){
+       return "Olá, eu sou o "+pessoa.nome+", tenho "+pessoa.idade+" anos, "+pessoa.altura+", meu peso é "+pessoa.peso+" e, só hoje, eu já caminhei "+pessoa.caminhouQuantosMetros+" metros!"
     }else{
-        return "Olá, eu sou a "+this.pessoa.nome+", tenho "+this.pessoa.idade+" ano, "+this.pessoa.altura+", meu peso é "+this.pessoa.peso+" e, só hoje, eu já caminhei "+this.pessoa.caminhouQuantosMetros+" metro!"
+        return "Olá, eu sou a "+pessoa.nome+", tenho "+pessoa.idade+" ano, "+pessoa.altura+", meu peso é "+pessoa.peso+" e, só hoje, eu já caminhei "+pessoa.caminhouQuantosMetros+" metro!"
     }
     
 }
 
-// Agora, apresente-se ;)
-pessoa.apresentacao("m", 22, 20);
+console.log(pessoa.apresentacao("f",1, 1));
